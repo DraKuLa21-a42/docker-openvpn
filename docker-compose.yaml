@@ -1,0 +1,16 @@
+services:
+  ovpn:
+    image: ovpn
+    container_name: ovpn
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /opt/etc/openvpn/ccd:/etc/openvpn/ccd
+    ports:
+      - "1194:1194"
+      - "3000:3000"
+      - "80:80"
+    restart: unless-stopped
+
