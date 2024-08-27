@@ -17,7 +17,8 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     volumes:
-      - /opt/etc/openvpn/ccd:/etc/openvpn/ccd
+      - /opt/openvpn-image/openvpn:/etc/openvpn
+      - /opt/openvpn-image/AdGuardHome:/opt/AdGuardHome
     ports:
       - "1194:1194"
       - "3000:3000"
