@@ -126,12 +126,14 @@ else
 fi
 
 # Додати правила файрволу
+iptables -t nat -F
 iptables -t nat -N dnsmap
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 iptables -t nat -A PREROUTING -s 10.8.0.0/16 -d 10.224.0.0/15 -j dnsmap
-iptables -A FORWARD -s 10.8.0.0/24 -j ACCEPT
-iptables -A FORWARD -d 10.8.0.0/24 -j ACCEPT
-cd /opt/dnsmap; /opt/dnsmap/proxy.py -a 127.0.0.4 -p 5959 --iprange 10.224.0.0/15 -u 77.88.8.8:53 &
+iptables -A FORWARD -i tun+ -j ACCEPT
+#iptables -A FORWARD -s 10.8.0.0/24 -j ACCEPT
+#iptables -A FORWARD -d 10.8.0.0/24 -j ACCEPT
+cd /opt/dnsmap; /opt/dnsmap/proxy.py -a 127.0.0.4 -p 5959 --iprange 10.224.0.0/15 -u 8.8.8.8:53 &
 
 # Запускаємо OpenVPN сервер
 openvpn --config /etc/openvpn/server.conf --verb 3 --log /dev/stdout
