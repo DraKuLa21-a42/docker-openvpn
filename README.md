@@ -1,6 +1,6 @@
 # OpenVPN Docker Image
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)]([]https://github.com/DraKuLa21-a42/docker-openvpn(https://github.com/DraKuLa21-a42/docker-openvpn))
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)]([https://github.com/DraKuLa21-a42/docker-openvpn](https://github.com/DraKuLa21-a42/docker-openvpn))
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-Image-blue)]([https://hub.docker.com/r/drakula21/openvpn-image](https://hub.docker.com/r/drakula21/openvpn-image))
 
 ## Використання
